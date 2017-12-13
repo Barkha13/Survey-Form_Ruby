@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Survey Form</title>
+    </head>
+<body>
+    <div>
+        <p>Thanks for submitting this form! You have submitted this form <%=session[:count]%>times now.</p>
+    </div>
+    <div style="text-align:right; width:500px; border:1px solid black; padding:20px;">
+        <h2>Submitted Information</h2>
+        <p>Name:<%= @result['name']%></p>
+        <p>Dojo Location:<%= @result['location']%></p>
+        <p>Favorite Language:<%= @result['language']%></p>
+        <p>Comment:<%= @result['comment']%></p>
+        
+        <form action="/">
+           <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            <input type="submit" value="Go Back" class="btn">
+        </form>
+    </div>
+</body>
+</html>
